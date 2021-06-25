@@ -7,6 +7,7 @@ import { useAuth } from '../hooks/useAuth';
 import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 import googleIconImg from '../assets/images/google-icon.svg';
+import loginIconImg from '../assets/images/login-icon.svg';
 
 import '../styles/auth.scss';
 import { database } from '../services/firebase';
@@ -75,7 +76,10 @@ export function Home() {
               onChange={(event) => setRoomCode(event.target.value)}
               value={roomCode}
             />
-            <Button type="submit">Entrar na sala</Button>
+            <Button type="submit">
+              <img src={loginIconImg} alt="Entrar na sala" />
+              Entrar na sala
+            </Button>
           </form>
         </div>
       </main>

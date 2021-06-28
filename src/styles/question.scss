@@ -8,12 +8,11 @@
     margin-top: 8px;
   }
 
-  
+
   &.highlighted {
     background: #f4f0ff;
     border: 1px solid #835afd;
-    
-    
+
     footer .user-info span {
       color: #29292E;
     }
@@ -44,9 +43,23 @@
       }
 
       span {
-        margin-left: 8px;
         color: #737380;
         font-size: 14px;
+      }
+
+      .tag-highlighted {
+        background: #835AFD;
+        color: #fff !important;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: normal;
+        padding: 0 12px;
+        border-radius: 20px;
+      }
+
+      .tag-answered {
+        @extend .tag-highlighted;
+        background: #A8A8B3;
       }
     }
 
@@ -60,7 +73,7 @@
       background:  transparent;
       cursor: pointer;
       transition: filter 0.2s;
-      
+
       &.like-button {
         display: flex;
         align-items: flex-end;

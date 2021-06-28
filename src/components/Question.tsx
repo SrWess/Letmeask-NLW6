@@ -34,6 +34,8 @@ export function Question({
         <div className="user-info">
           <img src={author.avatar} alt={author.name} />
           <span>{author.name}</span>
+          { isHighlighted && !isAnswered && <span className="tag-highlighted">Pergunta em destaque</span>}
+          { isAnswered && <span className="tag-answered">Pergunta respondida</span>}
         </div>
         <div>{children}</div>
       </footer>

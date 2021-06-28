@@ -8,6 +8,7 @@ import { AdminRoom } from './pages/AdminRoom';
 import { AuthContextProvider } from './contexts/AuthContext';
 
 import './styles/global.scss';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/rooms/:id" component={Room} />
 
           <Route path="/admin/rooms/:id" component={AdminRoom} />
+
+          <Route path="*" component={NotFound} />
         </Switch>
       </AuthContextProvider>
     </BrowserRouter>

@@ -43,6 +43,7 @@ export function Room() {
       author: {
         name: user.name,
         avatar: user.avatar,
+        id: user.id
       },
       isHighlighted: false,
       isAnswered: false,

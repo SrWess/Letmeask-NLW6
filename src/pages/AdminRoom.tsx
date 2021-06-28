@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 
 import { Button } from '../components/Button';
@@ -14,6 +15,7 @@ import conversationImg from '../assets/images/empty-questions.svg';
 
 import '../styles/room.scss';
 import { database } from '../services/firebase';
+import { useAuth } from '../hooks/useAuth';
 
 type RoomParams = {
   id: string;
@@ -23,8 +25,16 @@ export function AdminRoom() {
   const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
+  const { user } = useAuth();
 
-  const { questions, title } = useRoom(roomId);
+  const { questions, title, ownerId } = useRoom(roomId);
+  const isAuthenticated = localStorage.getItem('Authenticated')
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      history.push('/*')
+    }
+  }, []);
 
   async function handleEndRoom() {
     await database.ref(`rooms/${roomId}`).update({

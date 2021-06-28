@@ -61,6 +61,8 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         name: displayName,
         avatar: photoURL,
       });
+
+      localStorage.setItem('Authenticated', 'true');
     }
   }
 

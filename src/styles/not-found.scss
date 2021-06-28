@@ -1,0 +1,32 @@
+#page-not-found {
+  background: #fff;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  img {
+    width: 435px;
+  }
+
+  h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    line-height: 42px;
+    color: #242424;
+
+    margin-top: 28px;
+
+    max-width: 490px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 26px;
+    color: #737380;
+    margin: 18px 0;
+    max-width: 490px;
+  }
+}

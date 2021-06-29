@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Button } from '../components/Button';
+import { Button } from '../components/atoms/button';
 import { RoomCode } from '../components/RoomCode';
 import { Question } from '../components/Question';
 

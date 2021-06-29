@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
-import { Button } from '../components/Button';
+import { Button } from '../components/atoms/button';
 
 import notFoundImg from '../assets/images/404.svg';
 

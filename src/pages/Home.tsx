@@ -1,7 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { Button } from '../components/Button';
+import { Button } from '../components/atoms/button';
 import { useAuth } from '../hooks/useAuth';
 
 import illustrationImg from '../assets/images/illustration.svg';
@@ -11,6 +11,10 @@ import loginIconImg from '../assets/images/login-icon.svg';
 
 import '../styles/auth.scss';
 import { database } from '../services/firebase';
+import { Input } from '../components/atoms/input';
+import { Image } from '../components/atoms/image';
+import { Title } from '../components/atoms/title';
+import { Subtitle } from '../components/atoms/subtitle';
 
 export function Home() {
   const history = useHistory();
@@ -51,33 +55,33 @@ export function Home() {
   return (
     <div id="page-auth">
       <aside>
-        <img
+        <Image
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
+        <Title>Crie salas de Q&amp;A ao-vivo</Title>
+        <Subtitle>Tire as dúvidas da sua audiência em tempo-real</Subtitle>
       </aside>
 
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
-          <button className="create-room" onClick={handleCreateRoom}>
-            <img src={googleIconImg} alt="Logo do Google" />
+          <Image src={logoImg} alt="Letmeask" />
+          <Button className="create-room" onClick={handleCreateRoom}>
+            <Image src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
-          </button>
+          </Button>
 
           <div className="separator">ou entre em uma sala</div>
 
           <form onSubmit={handleJoinRoom}>
-            <input
-              type="text"
+            <Input
+              type=""
               placeholder="Digite o código da sala"
               onChange={(event) => setRoomCode(event.target.value)}
               value={roomCode}
             />
             <Button type="submit">
-              <img src={loginIconImg} alt="Entrar na sala" />
+              <Image src={loginIconImg} alt="Entrar na sala" />
               Entrar na sala
             </Button>
           </form>

@@ -8,7 +8,14 @@ import illustrationImg from '../assets/images/illustration.svg';
 import logoImg from '../assets/images/logo.svg';
 
 import '../styles/auth.scss';
+// import '../styles/config'
+
 import { database } from '../services/firebase';
+
+import { Image } from '../components/atoms/image';
+import { Title } from '../components/atoms/title';
+import { Text } from '../components/atoms/text';
+import { Input } from '../components/atoms/input';
 
 export function NewRoom() {
   const { user } = useAuth();
@@ -36,20 +43,20 @@ export function NewRoom() {
   return (
     <div id="page-auth">
       <aside>
-        <img
+        <Image
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
         />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo-real</p>
+        <Title>Crie salas de Q&amp;A ao-vivo</Title>
+        <Text className="subtitle">Tire as dúvidas da sua audiência em tempo-real</Text>
       </aside>
 
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
+          <Image className="logo" src={logoImg} alt="Letmeask" />
           <h2>Criar uma nova Sala</h2>
           <form onSubmit={handleCreateRoom}>
-            <input
+            <Input
               type="text"
               placeholder="Nome da sala"
               onChange={(event) => setNewRoom(event.target.value)}
@@ -58,9 +65,9 @@ export function NewRoom() {
             <Button type="submit">Criar sala</Button>
           </form>
 
-          <p>
+          <Text>
             Quer entrar em uma sala existente? <Link to="/">clique aqui</Link>
-          </p>
+          </Text>
         </div>
       </main>
     </div>

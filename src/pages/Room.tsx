@@ -14,6 +14,10 @@ import conversationImg from '../assets/images/empty-questions.svg';
 
 import '../styles/room.scss';
 
+import { Image } from '../components/atoms/image';
+import { Title } from '../components/atoms/title';
+import { Avatar } from '../components/atoms/avatar';
+
 type RoomParams = {
   id: string;
 };
@@ -73,14 +77,14 @@ export function Room() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <Image className="logo" src={logoImg} alt="Letmeask" />
           <RoomCode code={roomId} />
         </div>
       </header>
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <Title>Sala {title}</Title>
           {questions.length > 0 && <span>{questions.length} Pergunta(s)</span>}
         </div>
 
@@ -94,7 +98,7 @@ export function Room() {
           <div className="form-footer">
             {user ? (
               <div className="user-info">
-                <img src={user.avatar} alt={user.name} />
+                <Avatar src={user.avatar} alt={user.name} />
                 <span>{user.name}</span>
               </div>
             ) : (

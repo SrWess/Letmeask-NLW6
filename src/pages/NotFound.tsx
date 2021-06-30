@@ -6,17 +6,21 @@ import notFoundImg from '../assets/images/404.svg';
 
 import '../styles/not-found.scss';
 
+import { Title } from '../components/atoms/title';
+import { Image } from '../components/atoms/image';
+import { Text } from '../components/atoms/text';
+
 export function NotFound() {
   const history = useHistory();
 
   return (
     <div id="page-not-found">
-      <img src={notFoundImg} alt="Erro 404 - Não encontrado" />
-      <h1>Oops... Não encontramos essa página</h1>
-        <p>
+      <Image src={notFoundImg} alt="Erro 404 - Não encontrado" />
+      <Title>Oops... Não encontramos essa página</Title>
+        <Text>
           A página que você está procurando pode ter sido removida ou está
           temporariamente indisponível, não se preocupe já estamos verificando.
-        </p>
+        </Text>
         <Button type="button" onClick={() => history.push('/')}>Retornar à Home</Button>
     </div>
   );

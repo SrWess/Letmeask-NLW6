@@ -7,7 +7,7 @@ import { AdminRoom } from './pages/AdminRoom';
 
 import { AuthContextProvider } from './contexts/AuthContext';
 
-import './styles/global.scss';
+import './styles/main.scss';
 import { NotFound } from './pages/NotFound';
 
 function App() {

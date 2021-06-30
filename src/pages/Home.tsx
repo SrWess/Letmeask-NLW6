@@ -14,7 +14,8 @@ import { database } from '../services/firebase';
 import { Input } from '../components/atoms/input';
 import { Image } from '../components/atoms/image';
 import { Title } from '../components/atoms/title';
-import { Subtitle } from '../components/atoms/subtitle';
+import { Text } from '../components/atoms/text';
+import { Icon } from '../components/atoms/icon';
 
 export function Home() {
   const history = useHistory();
@@ -60,14 +61,14 @@ export function Home() {
           alt="Ilustração simbolizando perguntas e respostas"
         />
         <Title>Crie salas de Q&amp;A ao-vivo</Title>
-        <Subtitle>Tire as dúvidas da sua audiência em tempo-real</Subtitle>
+        <Text className="subtitle">Tire as dúvidas da sua audiência em tempo-real</Text>
       </aside>
 
       <main>
         <div className="main-content">
-          <Image src={logoImg} alt="Letmeask" />
+          <Image className="logo" src={logoImg} alt="Letmeask" />
           <Button className="create-room" onClick={handleCreateRoom}>
-            <Image src={googleIconImg} alt="Logo do Google" />
+            <Icon src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google
           </Button>
 
@@ -75,13 +76,13 @@ export function Home() {
 
           <form onSubmit={handleJoinRoom}>
             <Input
-              type=""
+              type="text"
               placeholder="Digite o código da sala"
               onChange={(event) => setRoomCode(event.target.value)}
               value={roomCode}
             />
             <Button type="submit">
-              <Image src={loginIconImg} alt="Entrar na sala" />
+              <Icon src={loginIconImg} alt="Entrar na sala" />
               Entrar na sala
             </Button>
           </form>

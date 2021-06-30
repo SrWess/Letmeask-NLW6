@@ -15,7 +15,11 @@ import conversationImg from '../assets/images/empty-questions.svg';
 
 import '../styles/room.scss';
 import { database } from '../services/firebase';
-import { useAuth } from '../hooks/useAuth';
+// import { useAuth } from '../hooks/useAuth';
+
+import { Image } from '../components/atoms/image';
+import { Title } from '../components/atoms/title';
+import { Text } from '../components/atoms/text';
 
 type RoomParams = {
   id: string;
@@ -25,14 +29,14 @@ export function AdminRoom() {
   const history = useHistory();
   const params = useParams<RoomParams>();
   const roomId = params.id;
-  const { user } = useAuth();
+  // const { user } = useAuth();
 
   const { questions, title, ownerId } = useRoom(roomId);
-  const isAuthenticated = localStorage.getItem('Authenticated')
+  const isAuthenticated = localStorage.getItem('Authenticated');
 
   useEffect(() => {
     if (!isAuthenticated) {
-      history.push('/*')
+      history.push('/*');
     }
   }, []);
 
@@ -66,7 +70,7 @@ export function AdminRoom() {
     <div id="page-room">
       <header>
         <div className="content">
-          <img src={logoImg} alt="Letmeask" />
+          <Image className="logo" src={logoImg} alt="Letmeask" />
           <div>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>
@@ -78,17 +82,17 @@ export function AdminRoom() {
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
+          <Title>Sala {title}</Title>
           {questions.length > 0 && <span>{questions.length} Pergunta(s)</span>}
         </div>
 
         {questions.length === 0 ? (
           <div className="empty-state">
-            <img src={conversationImg} alt="Balões de conversas" />
+            <Image src={conversationImg} alt="Balões de conversas" />
             <h3>Nenhuma pergunta por aqui...</h3>
-            <p>
+            <Text>
               Compartilhe o código desta sala para começar receber perguntas!
-            </p>
+            </Text>
           </div>
         ) : (
           <div className="question-list">

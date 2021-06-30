@@ -24,12 +24,12 @@ A proposta da plataforma é fazer com que usuários realize perguntas enquanto a
 ## 🛠 Novas implementações
 - [x] Tags para facilitar compreensão (Respondido e Pergunta em destaque)
 - [x] ESLint e Prettier
-- [] Layout Responsivo
-- [] Atomic Design
-  - [] Atoms _(Implementando)_
-  - [] Molecules
-  - [] Organisms
-- [] PWA
+- [ ] Layout Responsivo
+- [ ] Atomic Design
+  - [ ] Atoms _(Implementando)_
+  - [ ] Molecules
+  - [ ] Organisms
+- [ ] PWA
 
 ## ⚡ Como rodar este projeto
 Necessário ter o [Git](https://git-scm.com/) e [Node.js](https://nodejs.org/en/) instalado em sua máquina. Após a instalação, rodar os seguintes comandos:
